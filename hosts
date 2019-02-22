@@ -1,0 +1,12 @@
+[all:vars]
+ansible_become=yes
+ansible_become_method=sudo
+
+[freebsd]
+patito.ninja ansible_python_interpreter=/usr/local/bin/python2.7
+
+[redhat]
+patito.club
+
+[webserver]
+patito.club

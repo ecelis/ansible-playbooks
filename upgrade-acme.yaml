@@ -1,0 +1,7 @@
+---
+
+- hosts: webserver
+  gather_facts: yes
+  tasks:
+    - name: Upgrade acme.sh
+      command: /root/.acme.sh/acme.sh --upgrade

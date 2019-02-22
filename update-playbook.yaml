@@ -1,0 +1,13 @@
+---
+
+- hosts: redhat
+  gather_facts: yes
+  tasks:
+    - name: Upgrade RHEL/CentOS hosts
+      yum: name=* update_cache=yes state=latest exclude=nginx*
+
+- hosts: freebsd
+  gather_facts: yes
+  tasks:
+    - name: Upgrade FreeBSD hosts
+      pkgng: name=* state=latest
