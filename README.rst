@@ -5,6 +5,13 @@ Ansible playbooks
 ansible-playbook -i hosts <playbook.yml> [--verbose]
 ``
 
+Manage only one service
+
+``bash
+ansible -i hosts -m <service|systemd> -a 'name=<service>
+state=<started|stoped|restarted>' -b <target>
+``
+
 To schedule playbooks execution, use crontab.
 
 ``bash

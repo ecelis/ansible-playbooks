@@ -1,0 +1,26 @@
+---
+
+- hosts: redhat
+  tasks:
+    - name: Restart sshd in RHEL/CentOS hosts
+      systemd: name=sshd state=restarted
+    - name: Restart php-fpm in RHEL/CentOS hosts
+      systemd: name=php-fpm state=restarted
+    - name: Restart nginx in RHEL/CentOS hosts
+      systemd: name=nginx state=restarted
+    - name: Restart jira in RHEL/CentOS hosts
+      systemd: name=jira state=restarted
+    - name: Restart docker in RHEL/CentOS hosts
+      systemd: name=docker state=restarted
+
+
+- hosts: freebsd
+  tasks:
+    - name: Restart sshd in FreeBSD hosts
+      service: name=sshd state=restarted
+    - name: Restart tor in FreeBSD hosts
+      service: name=tor state=restarted
+    - name: Restart sendmail in FreeBSD hosts
+      service: name=sendmail state=restarted
+    - name: Restart named in FreeBSD hosts
+      service: name=named state=restarted
